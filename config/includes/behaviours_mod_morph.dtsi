@@ -138,6 +138,23 @@
         };
 
         /*
+         * None and CMD+Z with CMD
+         * Used on nav layer to allow both navigation as well as
+         * cut, copy and paste
+         *
+         * Usage: &mm_none_undo
+         * Tap: None
+         * CMD-Tap: CMD+Z
+         */
+        mm_grave_undo: mm_grave_undo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "mm_grave_undo";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp MY_UNDO>;
+            mods = <(MOD_RGUI|MOD_LGUI)>;
+        };
+
+        /*
          * LESS THAN and CMD+Z with CMD
          * Used on nav layer to allow both navigation as well as
          * cut, copy and paste
