@@ -191,6 +191,22 @@
         };
 
         /*
+         * None and CMD+C with CMD
+         * Used on nav layer to allow both navigation as well as
+         * cut, copy and paste
+         *
+         * Usage: &mm_none_copy
+         * Tap: Nothing
+         * CMD-Tap: CMD+V
+         */
+        mm_none_copy: mm_none_copy {
+            compatible = "zmk,behavior-mod-morph";
+            label = "mm_none_copy";
+            #binding-cells = <0>;
+            bindings = <&none>, <&kp MY_COPY>;
+            mods = <(MOD_RGUI|MOD_LGUI)>;
+        };
+        /*
          * None and CMD+V with CMD
          * Used on nav layer to allow both navigation as well as
          * cut, copy and paste
