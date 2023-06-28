@@ -138,6 +138,23 @@
         };
 
         /*
+         * LESS THAN and CMD+Z with CMD
+         * Used on nav layer to allow both navigation as well as
+         * cut, copy and paste
+         *
+         * Usage: &mm_lt_undo
+         * Tap: LT
+         * CMD-Tap: CMD+Z
+         */
+        mm_lt_undo: mm_lt_undo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "mm_lt_undo";
+            #binding-cells = <0>;
+            bindings = <&kp LT>, <&kp MY_UNDO>;
+            mods = <(MOD_RGUI|MOD_LGUI)>;
+        };
+
+        /*
          * Left Word and CMD+X with CMD
          * Used on nav layer to allow both navigation as well as
          * cut, copy and paste
@@ -220,6 +237,23 @@
             label = "mm_none_paste";
             #binding-cells = <0>;
             bindings = <&none>, <&kp MY_PASTE>;
+            mods = <(MOD_RGUI|MOD_LGUI)>;
+        };
+
+        /*
+         * RIGHT WORD and CMD+V with CMD
+         * Used on nav layer to allow both navigation as well as
+         * cut, copy and paste
+         *
+         * Usage: &mm_rword_paste
+         * Tap: Nothing
+         * CMD-Tap: CMD+V
+         */
+        mm_rword_paste: mm_rword_paste {
+            compatible = "zmk,behavior-mod-morph";
+            label = "mm_none_paste";
+            #binding-cells = <0>;
+            bindings = <&kp LA(RIGHT)>, <&kp MY_PASTE>;
             mods = <(MOD_RGUI|MOD_LGUI)>;
         };
 
