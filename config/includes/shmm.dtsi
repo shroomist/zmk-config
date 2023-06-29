@@ -1,0 +1,25 @@
+// Make sure settings.dtsi is included before this file
+
+/ {
+
+    behaviors {
+
+
+        /*
+         * Shifted Backspace deletes + Layer Tap
+         *
+         * Usage: &shmm_bspc_del_layer
+         * Tap: Backspace
+         * Shift-Tap: Delete
+         * Hold: Switch layer
+         */
+        shmm_bspc_del: shmm_bspc_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE_LAYER";
+            #binding-cells = <0>;
+            bindings = <&lt NAV BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_LCTL|MOD_LALT|MOD_RGUI|MOD_LCTL|MOD_LALT)>;
+        };
+    };
+};
