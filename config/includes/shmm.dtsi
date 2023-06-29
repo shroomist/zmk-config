@@ -17,9 +17,10 @@
             compatible = "zmk,behavior-mod-morph";
             label = "BACKSPACE_DELETE_LAYER";
             #binding-cells = <0>;
-            bindings = <&lt NAV BSPC>, <&kp DEL>;
+            bindings = <&lt SYM BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LGUI|MOD_LCTL|MOD_LALT|MOD_RGUI|MOD_LCTL|MOD_LALT)>;
         };
+
     };
 };
